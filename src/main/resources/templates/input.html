@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert New or Edit Car</title>
+
+</head>
+
+<body>
+
+	<form th:object="${newCar}"	th:action="@{/update/{id}(id=${newCar.id})}" method=POST>
+		Name: <input name="name" size="20" th:field="*{owner.name}"><br />
+		Phone Number: <input name="phone" size="20" th:field="*{owner.phone}"><br /> 
+		Year own: <input name="year" size="20" th:field="*{owner.year}"><br /> 
+		Make: <input name="make" size="20" th:field="*{make}"><br />
+		Model: <input name="model" size="20" th:field="*{model}"><br />
+		Type: <input name="type" size="20" th:field="*{type}"><br /> 
+		Status: <input name="status" size="20" th:field="*{status}"><br />
+		<input name="Submit" type="submit" value="submit" />
+
+	</form>
+
+	<a href="../viewAll">View All Cars</a>
+
+</body>
+</html>
