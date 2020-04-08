@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th= "http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>View All Cars</title>
 </head>
 <body>
+<div class="container">
 <form> 
-<table> 
+<div class="table-responsive">
+<table class="table table-hover"> 
+ <thead>
+      <tr>
+        <th>ID</th>
+        <th>Owner Name</th>
+        <th>Phone Number</th>
+        <th>Year</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
 <tr th:each= "currentCar : ${cars}" >  
 	<td th:text= "${currentCar.id}" />     
 	<td th:text= "${currentCar.owner.name}" />     
@@ -16,11 +38,13 @@
 	<td th:text= "${currentCar.model}" />
 	<td th:text= "${currentCar.type}" /> 
 	<td th:text= "${currentCar.status}" /> 
-	<td><a th:href="@{/edit/{id}(id=${currentCar.id})}">Edit</a></td>
-	<td><a th:href="@{/delete/{id}(id=${currentCar.id})}">Delete</a></td>
+	<td><a class="btn btn-default" th:href="@{/edit/{id}(id=${currentCar.id})}">Edit</a></td>
+	<td><a class="btn btn-default" th:href="@{/delete/{id}(id=${currentCar.id})}">Delete</a></td>
 </tr> 
-</table> 
+</table>
+</div>
 </form> 
-<a href= "../inputCar" >Add a new car</a> 
+<a class="btn btn-info" href= "../inputCar" >Add a new car</a> 
+</div>
 </body>
 </html>

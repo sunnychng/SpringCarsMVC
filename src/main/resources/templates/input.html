@@ -2,29 +2,87 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>Insert New or Edit Car</title>
 
 </head>
 
 <body>
 
-	<form th:object="${newCar}"	th:action="@{/update/{id}(id=${newCar.id})}" method=POST>
-		Name: <input name="name" size="20" th:field="*{owner.name}"><br />
-		Phone Number: <input name="phone" size="20" th:field="*{owner.phone}"><br /> 
-		Year own: <input name="year" size="20" th:field="*{owner.year}"><br /> 
-		Make: <input name="make" size="20" th:field="*{make}"><br />
-		Model: <input name="model" size="20" th:field="*{model}"><br />
-		Type: <input name="type" size="20" th:field="*{type}"><br /> 
-		Status: <input name="status" size="20" th:field="*{status}"><br />
-		<input name="Submit" type="submit" value="submit" />
+	<div class="container col-sm-offset-3">
+		<h2 class="col-sm-offset-2">Insert a new car</h2>
+		<form class="form-horizontal" th:object="${newCar}"
+			th:action="@{/update/{id}(id=${newCar.id})}" method="POST">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="name">Name: </label>
+				<div class="col-sm-4">
+					<input class="form-control" name="name" size="20"
+						th:field="*{owner.name}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="phone">Phone
+					Number: </label>
+				<div class="col-sm-4">
+					<input class="form-control" name="phone" size="20"
+						th:field="*{owner.phone}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="yearown">Year
+					own: </label>
+				<div class="col-sm-4">
+					<input class="form-control" name="year" size="20"
+						th:field="*{owner.year}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="make">Make: </label>
+				<div class="col-sm-4">
+					<input class="form-control" name="make" size="20"
+						th:field="*{make}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="model">Model: </label>
+				<div class="col-sm-4">
+					<input class="form-control" name="model" size="20"
+						th:field="*{model}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="type">Type: </label>
+				<div class="col-sm-4">
+					<input class="form-control" name="type" size="20"
+						th:field="*{type}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="status">Status: </label>
+				<div class="col-sm-4">
+					<input class="form-control" name="status" size="20"
+						th:field="*{status}">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-4">
+					<input name="Submit" class="btn btn-basic" type="submit"
+						value="submit" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-4">
+					<a class="btn btn-info" href="../viewAll">View All Cars</a>
+				</div>
+			</div>
+		</form>
 
-	</form>
-
-	<a href="../viewAll">View All Cars</a>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+	</div>
 
 </body>
 </html>
