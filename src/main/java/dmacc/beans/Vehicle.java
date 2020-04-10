@@ -22,7 +22,7 @@ public class Vehicle {
 	public Vehicle() {
 		super();
 		// TODO Auto-generated constructor stub
-		this.status = "new";
+		//this.status = "new";
 	}
 
 	public Vehicle(String make) {
