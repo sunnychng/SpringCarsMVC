@@ -82,6 +82,10 @@ public class Vehicle {
 		this.type = type;
 	}
 	
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
 	public Owner getOwner() {
 		return owner;
 	}
